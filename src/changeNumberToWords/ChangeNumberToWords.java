@@ -9,11 +9,11 @@ public class ChangeNumberToWords {
         System.out.println("Enter the number:");
         int number = scanner.nextInt();
 
-        int num3 = (number - (number % 100)) / 100;
-        int num1 = ((number - (num3 * 100)) % 10);
-        int num2 = (number - num3 * 100 - num1) / 10;
-        int num4 = number - num3 * 100;
-        switch (num3) {
+        int hundred = (number - (number % 100)) / 100;
+        int unit = ((number - (hundred * 100)) % 10);
+        int dozen = (number - hundred * 100 - unit) / 10;
+        int num4 = number - hundred * 100;
+        switch (hundred) {
             case 1:
                 System.out.print("one hundred and ");
                 break;
@@ -71,30 +71,30 @@ public class ChangeNumberToWords {
                                         if (num4 == 19) {
                                             System.out.print("nineteen");
                                         } else {
-                                            switch (num2) {
+                                            switch (dozen) {
                                                 case 2:
-                                                    System.out.print("twenty");
+                                                    System.out.print("twenty ");
                                                     break;
                                                 case 3:
-                                                    System.out.print("thirty");
+                                                    System.out.print("thirty ");
                                                     break;
                                                 case 4:
-                                                    System.out.print("forty");
+                                                    System.out.print("forty ");
                                                     break;
                                                 case 5:
-                                                    System.out.print("fifty");
+                                                    System.out.print("fifty ");
                                                     break;
                                                 case 6:
-                                                    System.out.print("sixty");
+                                                    System.out.print("sixty ");
                                                     break;
                                                 case 7:
-                                                    System.out.print("seventy");
+                                                    System.out.print("seventy ");
                                                     break;
                                                 case 8:
-                                                    System.out.print("eighty");
+                                                    System.out.print("eighty ");
                                                     break;
                                                 case 9:
-                                                    System.out.print("ninety");
+                                                    System.out.print("ninety ");
                                                     break;
                                                 case 10:
                                                     System.out.print("ten");
@@ -102,7 +102,7 @@ public class ChangeNumberToWords {
                                                 default:
                                                     System.out.print("");
                                             }
-                                            switch (num1) {
+                                            switch (unit) {
                                                 case 1:
                                                     System.out.print("one");
                                                     break;
@@ -137,8 +137,6 @@ public class ChangeNumberToWords {
                                                     System.out.print("");
                                             }
                                         }
-
-
                                     }
                                 }
 
